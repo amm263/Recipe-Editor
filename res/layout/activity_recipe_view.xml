@@ -1,0 +1,53 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    xmlns:tools="http://schemas.android.com/tools"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical" >
+
+		<TextView
+		    android:id="@+id/viewNameText"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:text=""
+		    android:textAppearance="?android:attr/textAppearanceMedium" />
+		
+		<ImageView 
+	        android:id="@+id/viewPhoto"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:contentDescription="@string/editorImage" />
+		
+		<TextView
+		    android:id="@+id/viewIngredients"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:text="@string/ingredients"
+		    android:textAppearance="?android:attr/textAppearanceMedium" />
+		
+		<LinearLayout
+		  	android:id="@+id/viewIngredientsLayout"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical" >
+		</LinearLayout>
+		
+		<TextView
+		    android:id="@+id/viewDescription"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:text=""
+		    android:textAppearance="?android:attr/textAppearanceMedium" />
+		
+		<Button
+	        android:id="@+id/viewEditButton"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/edit" />
+
+	</LinearLayout>
+</ScrollView>

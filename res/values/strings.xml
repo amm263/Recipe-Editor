@@ -1,0 +1,25 @@
+<resources>
+
+    <string name="app_name">Recipe Editor</string>
+    <string name="newRecipeButton">Insert New Recipe</string>
+    <string name="browseRecipeButton">Browse Recipes</string>
+    <string name="editorName">Name</string>
+    <string name="editorImage">Image</string>
+    <string name="editorIngredients">Ingredients</string>
+    <string name="editorIngredientsButton">Insert new Ingredient</string>
+    <string name="editorDescription">Description</string>
+    <string name="editorImageButton">Capture a Photo</string>
+    <string name="ingredientName">Ingredient Name</string>
+    <string name="ingredientQuantity">Quantity</string>
+    <string name="ingredientMeasure">Unit of Measure</string>
+    <string name="save">Save</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_recipe_editor">RecipeEditorActivity</string>
+    <string name="title_activity_main">Recipe Editor</string>
+    <string name="editorPeople">People</string>
+    <string name="title_activity_recipe_view">RecipeViewActivity</string>
+    <string name="edit">Edit</string>
+    <string name="ingredients">Ingredients</string>
+
+</resources>

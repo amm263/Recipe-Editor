@@ -1,0 +1,8 @@
+Recipe Editor is an Android app to edit personal recipes.
+
+Features:
+
+- Edit and View recipes
+- Save recipes on SD card as .html files
+- Automatic resizing of ingredient quantities depending on guests number
+- Dropbox syncing

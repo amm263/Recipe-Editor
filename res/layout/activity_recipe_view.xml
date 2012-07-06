@@ -15,6 +15,29 @@
 		    android:text=""
 		    android:textAppearance="?android:attr/textAppearanceMedium" />
 		
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    xmlns:tools="http://schemas.android.com/tools"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" >
+	    <Button
+	        android:id="@+id/increaseButton"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/increase" />
+		<TextView
+		    android:id="@+id/viewPeopleText"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:text=""
+		    android:textAppearance="?android:attr/textAppearanceMedium" />
+		<Button
+	        android:id="@+id/decreaseButton"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/edit" />
+		</LinearLayout>
+		
 		<ImageView 
 	        android:id="@+id/viewPhoto"
 	        android:layout_width="wrap_content"
@@ -37,11 +60,18 @@
 		</LinearLayout>
 		
 		<TextView
+		    android:id="@+id/viewDescriptionText"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:text="@string/editorDescription"
+		    android:textAppearance="?android:attr/textAppearanceMedium" />
+		
+		<TextView
 		    android:id="@+id/viewDescription"
 		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:text=""
-		    android:textAppearance="?android:attr/textAppearanceMedium" />
+		    android:textAppearance="?android:attr/textAppearanceSmall" />
 		
 		<Button
 	        android:id="@+id/viewEditButton"

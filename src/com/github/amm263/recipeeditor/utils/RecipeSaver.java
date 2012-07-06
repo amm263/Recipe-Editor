@@ -1,12 +1,13 @@
 package com.github.amm263.recipeeditor.utils;
 
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.ByteBuffer;
 import java.util.ArrayList;
 
 import android.os.Environment;
+import android.util.Base64;
 
 import com.github.amm263.recipeeditor.Ingredient;
 import com.github.amm263.recipeeditor.Recipe;
@@ -14,8 +15,6 @@ import com.github.amm263.recipeeditor.Recipe;
 public class RecipeSaver {
 	
 	private Recipe recipe;
-	private FileWriter writer;
-    private BufferedWriter out;
 	ArrayList<String> buffer;
 	
 	public RecipeSaver(Recipe rec)
@@ -28,17 +27,18 @@ public class RecipeSaver {
 		int i;
 		writeHead();
 		writeBody();
-		File root = Environment.getExternalStorageDirectory();
-		writer = new FileWriter(root+"/Recipe Editor/"+recipe.getName()+".html");
-        out = new BufferedWriter(writer);
-        if (root.canWrite())
+		File recipeDirectory = new File(Environment.getExternalStorageDirectory()+"/Recipe Editor/recipes/");
+		recipeDirectory.mkdirs();
+		File recipeFile = new File(recipeDirectory, recipe.getName()+".html");
+		FileOutputStream fos = new FileOutputStream(recipeFile);
+        if (recipeDirectory.canWrite())
         {	
 	        for (i=0;i<buffer.size();i++)
 	        {
-	            out.write(buffer.get(i));
+	        	fos.write(buffer.get(i).getBytes());
 	        }
         }
-        out.close();
+        fos.close();
         buffer.clear();
 		return Boolean.TRUE;
 	}
@@ -86,10 +86,18 @@ public class RecipeSaver {
 	private void writeBody()
 	{
 		buffer.add("\t<body>\n");
+		//Header
+		buffer.add("\t\t<div id=\"Header\">\n");
+		buffer.add("\t\t\t<h1>recipe.name</h1>\n\n");
+		buffer.add("\t\t</div>\n");
 		//Start Container
 		buffer.add("\t\t<div id=\"Container\">\n");
 		//Image
 		buffer.add("\t\t\t<div id=\"Image\">\n");
+		int size = recipe.getImage().getRowBytes()*recipe.getImage().getHeight();
+		ByteBuffer imageBuffer = ByteBuffer.allocate(size);
+		recipe.getImage().copyPixelsToBuffer(imageBuffer);
+		buffer.add("\t\t\t\t<img src=\"data:image/bmp;base64,"+Base64.encodeToString(imageBuffer.array(), Base64.DEFAULT)+"/>\n");
 		buffer.add("\t\t\t</div>\n");
 		//Ingredients
 		buffer.add("\t\t\t<div id=\"Ingredients\">\n");
@@ -106,6 +114,7 @@ public class RecipeSaver {
 		buffer.add("\t\t\t</div>\n");
 		//Recipe
 		buffer.add("\t\t\t<div id=\"Recipe\">\n");
+		buffer.add("\t\t\t\t<strong><p>Description</p></strong>\n");
 		buffer.add("\t\t\t\t<p>"+recipe.getDescription()+"</p>\n");
 		buffer.add("\t\t\t</div>\n");
 		//End Container

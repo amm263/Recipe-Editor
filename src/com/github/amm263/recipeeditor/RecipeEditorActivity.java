@@ -1,5 +1,6 @@
 package com.github.amm263.recipeeditor;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import android.os.Bundle;
 import android.app.Activity;
@@ -70,12 +71,12 @@ public class RecipeEditorActivity extends Activity {
         			   recipe.setName(name.getText().toString());
         			   recipe.setPeople(Integer.valueOf(people.getText().toString()));
         			   recipe.setDescription(description.getText().toString());
-		        		   /*try {
+		        		   try {
 							recipe.saveRecipe();
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
-						}*/
+						}
 		        		   Intent intent = new Intent();
 		        		   intent.setClass(getApplicationContext(), RecipeViewActivity.class);
 		        		   startActivity(intent);

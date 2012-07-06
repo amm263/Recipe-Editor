@@ -31,6 +31,20 @@ public class RecipeViewActivity extends Activity {
         		   intent.setClass(getApplicationContext(), RecipeEditorActivity.class);
         		   startActivity(intent);
         	   }});
+        
+        final Button decreasePeople = (Button)findViewById(R.id.increaseButton);
+        decreasePeople.setOnClickListener(new Button.OnClickListener(){
+
+        	   public void onClick(View arg0) {
+        		   recipe.updatePeople(recipe.getPeople()+1);
+        	   }});
+        
+        final Button increasePeople = (Button)findViewById(R.id.decreaseButton);
+        increasePeople.setOnClickListener(new Button.OnClickListener(){
+
+        	   public void onClick(View arg0) {
+        		   recipe.updatePeople(recipe.getPeople()-1);
+        	   }});
     }
 
     @Override
@@ -43,10 +57,12 @@ public class RecipeViewActivity extends Activity {
     {
     	TextView name = (TextView)findViewById(R.id.viewNameText);
     	TextView description = (TextView)findViewById(R.id.viewDescription);
+    	TextView viewpeople = (TextView)findViewById(R.id.viewPeopleText);
     	Bitmap thumbnail = recipe.getImage();
     	ImageView image = (ImageView) findViewById(R.id.viewPhoto);  
     	image.setImageBitmap(thumbnail); 
     	name.setText(recipe.getName());
+    	viewpeople.setText(recipe.getPeople().toString());
     	description.setText(recipe.getDescription());    	
     	ArrayList<Ingredient> ingredients= recipe.getIngredients();
 		LinearLayout ingredientsLayout = (LinearLayout)findViewById(R.id.viewIngredientsLayout);

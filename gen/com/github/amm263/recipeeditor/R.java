@@ -21,6 +21,7 @@ public final class R {
     }
     public static final class id {
         public static final int browseRecipesButton=0x7f080001;
+        public static final int decreaseButton=0x7f080012;
         public static final int editorDescriptionField=0x7f08000d;
         public static final int editorDescriptionText=0x7f08000c;
         public static final int editorImageButton=0x7f08000b;
@@ -33,22 +34,25 @@ public final class R {
         public static final int editorPeopleField=0x7f080005;
         public static final int editorPeopleText=0x7f080004;
         public static final int editorSaveButton=0x7f08000e;
-        public static final int ingredientMeasure=0x7f08001a;
-        public static final int ingredientName=0x7f080016;
-        public static final int ingredientQuantity=0x7f080018;
-        public static final int menu_settings=0x7f08001c;
+        public static final int increaseButton=0x7f080010;
+        public static final int ingredientMeasure=0x7f08001e;
+        public static final int ingredientName=0x7f08001a;
+        public static final int ingredientQuantity=0x7f08001c;
+        public static final int menu_settings=0x7f080020;
         public static final int newRecipeButton=0x7f080000;
         public static final int photoResultView=0x7f08000a;
-        public static final int popupMeasureText=0x7f080019;
-        public static final int popupNameText=0x7f080015;
-        public static final int popupQuantityText=0x7f080017;
-        public static final int saveIngredientButton=0x7f08001b;
-        public static final int viewDescription=0x7f080013;
-        public static final int viewEditButton=0x7f080014;
-        public static final int viewIngredients=0x7f080011;
-        public static final int viewIngredientsLayout=0x7f080012;
+        public static final int popupMeasureText=0x7f08001d;
+        public static final int popupNameText=0x7f080019;
+        public static final int popupQuantityText=0x7f08001b;
+        public static final int saveIngredientButton=0x7f08001f;
+        public static final int viewDescription=0x7f080017;
+        public static final int viewDescriptionText=0x7f080016;
+        public static final int viewEditButton=0x7f080018;
+        public static final int viewIngredients=0x7f080014;
+        public static final int viewIngredientsLayout=0x7f080015;
         public static final int viewNameText=0x7f08000f;
-        public static final int viewPhoto=0x7f080010;
+        public static final int viewPeopleText=0x7f080011;
+        public static final int viewPhoto=0x7f080013;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -57,13 +61,13 @@ public final class R {
         public static final int new_ingredient_popup=0x7f030003;
     }
     public static final class menu {
-        public static final int activity_main=0x7f070000;
-        public static final int activity_recipe_editor=0x7f070001;
-        public static final int activity_recipe_view=0x7f070002;
+        public static final int activity_recipe_editor=0x7f070000;
+        public static final int activity_recipe_view=0x7f070001;
     }
     public static final class string {
         public static final int app_name=0x7f050000;
         public static final int browseRecipeButton=0x7f050002;
+        public static final int decrease=0x7f050015;
         public static final int edit=0x7f050013;
         public static final int editorDescription=0x7f050007;
         public static final int editorImage=0x7f050004;
@@ -73,6 +77,7 @@ public final class R {
         public static final int editorName=0x7f050003;
         public static final int editorPeople=0x7f050011;
         public static final int hello_world=0x7f05000d;
+        public static final int increase=0x7f050016;
         public static final int ingredientMeasure=0x7f05000b;
         public static final int ingredientName=0x7f050009;
         public static final int ingredientQuantity=0x7f05000a;

@@ -21,5 +21,7 @@
     <string name="title_activity_recipe_view">RecipeViewActivity</string>
     <string name="edit">Edit</string>
     <string name="ingredients">Ingredients</string>
+    <string name="decrease">-</string>
+	<string name="increase">+</string>
 
 </resources>

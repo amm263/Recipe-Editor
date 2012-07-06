@@ -23,6 +23,11 @@ public class Recipe{
 		return instance;
 	}
 	
+	public void updatePeople(int howMany)
+	{
+		// Ingredients
+	}
+	
 	public static void clear()
 	{
 		instance = new Recipe();

@@ -16,6 +16,7 @@ public class MainActivity extends Activity {
         newRecipeButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
+            	Recipe.clear();
             	Intent myIntent = new Intent(getApplicationContext(), RecipeEditorActivity.class);
                 startActivityForResult(myIntent, 0);          
             }

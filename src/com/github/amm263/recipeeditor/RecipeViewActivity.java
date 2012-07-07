@@ -37,6 +37,7 @@ public class RecipeViewActivity extends Activity {
 
         	   public void onClick(View arg0) {
         		   recipe.updatePeople(recipe.getPeople()+1);
+        		   loadRecipe(recipe);
         	   }});
         
         final Button increasePeople = (Button)findViewById(R.id.decreaseButton);
@@ -44,6 +45,7 @@ public class RecipeViewActivity extends Activity {
 
         	   public void onClick(View arg0) {
         		   recipe.updatePeople(recipe.getPeople()-1);
+        		   loadRecipe(recipe);
         	   }});
     }
 
@@ -63,9 +65,15 @@ public class RecipeViewActivity extends Activity {
     	image.setImageBitmap(thumbnail); 
     	name.setText(recipe.getName());
     	viewpeople.setText(recipe.getPeople().toString());
-    	description.setText(recipe.getDescription());    	
+    	String formattedDescription= new String("");
+		for(int i=0;i<recipe.getDescription().length;i++)
+		{
+			formattedDescription=formattedDescription+recipe.getDescription()[i]+"\n";
+		}
+    	description.setText(formattedDescription);    	
     	ArrayList<Ingredient> ingredients= recipe.getIngredients();
 		LinearLayout ingredientsLayout = (LinearLayout)findViewById(R.id.viewIngredientsLayout);
+		ingredientsLayout.removeAllViews();
 		for (int i=0; i<ingredients.size();i++)
 		{
     	 	TextView newIngredient= new TextView(getBaseContext());

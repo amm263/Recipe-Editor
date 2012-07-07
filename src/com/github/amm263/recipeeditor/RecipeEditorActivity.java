@@ -70,7 +70,7 @@ public class RecipeEditorActivity extends Activity {
         		   {
         			   recipe.setName(name.getText().toString());
         			   recipe.setPeople(Integer.valueOf(people.getText().toString()));
-        			   recipe.setDescription(description.getText().toString());
+        			   recipe.setDescription(description.getText().toString().split("\n"));
 		        		   try {
 							recipe.saveRecipe();
 						} catch (IOException e) {
@@ -108,7 +108,12 @@ public class RecipeEditorActivity extends Activity {
 		EditText description = (EditText)findViewById(R.id.editorDescriptionField);
 		name.setText(recipe.getName());
 		people.setText(recipe.getPeople().toString());
-		description.setText(recipe.getDescription());
+		String formattedDescription= new String("");
+		for(int i=0;i<recipe.getDescription().length;i++)
+		{
+			formattedDescription=formattedDescription+recipe.getDescription()[i]+"\n";
+		}
+		description.setText(formattedDescription);
 		ArrayList<Ingredient> ingredients= recipe.getIngredients();
 		LinearLayout ingredientsLayout = (LinearLayout)findViewById(R.id.editorIngredientsLayout);
 		Bitmap thumbnail= recipe.getImage();

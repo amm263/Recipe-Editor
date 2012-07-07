@@ -23,6 +23,11 @@ public class Ingredient {
 		return quantity;
 	}
 	
+	public void setQuantity(float qty)
+	{
+		quantity = qty;
+	}
+	
 	public String getUnitMeasure()
 	{
 		return unitMeasure;

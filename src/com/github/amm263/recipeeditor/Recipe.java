@@ -8,7 +8,7 @@ import com.github.amm263.recipeeditor.utils.RecipeSaver;
 public class Recipe{
 
 	private static Recipe instance = null;
-	private String description="";
+	private String[] description;
 	private ArrayList<Ingredient> ingredients;
 	private Integer hoursToPrepare= 0;
 	private Integer minutesToPrepare= 0;
@@ -25,7 +25,15 @@ public class Recipe{
 	
 	public void updatePeople(int howMany)
 	{
-		// Ingredients
+		if(howMany>0)
+		{
+			for(int i=0;i<ingredients.size();i++)
+			{
+				// quantity : people = x : howMany
+				ingredients.get(i).setQuantity((ingredients.get(i).getQuantity()*howMany)/people);
+			}
+			people= howMany;
+		}
 	}
 	
 	public static void clear()
@@ -36,6 +44,8 @@ public class Recipe{
 	private Recipe()
 	{
 		ingredients= new ArrayList<Ingredient>();
+		description= new String[1];
+		description[0]= "";
 	}
 	
 	public void setImage(Bitmap im)
@@ -78,12 +88,12 @@ public class Recipe{
 		ingredients.add(ing);
 	}
 	
-	public void setDescription(String pdescription)
+	public void setDescription(String[] pdescription)
 	{
 		description= pdescription;
 	}
 	
-	public String getDescription()
+	public String[] getDescription()
 	{
 		return description;
 	}

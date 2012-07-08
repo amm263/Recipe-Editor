@@ -18,7 +18,17 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
             	Recipe.clear();
             	Intent myIntent = new Intent(getApplicationContext(), RecipeEditorActivity.class);
-                startActivityForResult(myIntent, 0);          
+                startActivity(myIntent);          
+            }
+        });
+        
+        Button browseRecipesButton = (Button)findViewById(R.id.browseRecipesButton);
+        browseRecipesButton.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+            	Recipe.clear();
+            	Intent myIntent = new Intent(getApplicationContext(), RecipeBrowserActivity.class);
+                startActivity(myIntent);          
             }
         });
     }

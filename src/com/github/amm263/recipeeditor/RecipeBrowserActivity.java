@@ -43,9 +43,10 @@ public class RecipeBrowserActivity extends Activity {
 			
 			public void onClick(View v) {
 				Recipe.clear();
-				RecipeLoader.loadRecipe(viewList.get(i).getText().toString());
+				RecipeLoader loader= new RecipeLoader();
+				loader.loadRecipe(viewList.get(i).getText().toString());
 				Intent intent = new Intent();
-				intent.setClass(getApplicationContext(), RecipeEditorActivity.class);
+				intent.setClass(getApplicationContext(), RecipeViewActivity.class);
 				startActivity(intent);	
 			}
 		});

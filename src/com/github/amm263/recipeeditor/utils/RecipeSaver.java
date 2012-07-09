@@ -96,9 +96,9 @@ public class RecipeSaver {
 		//Image
 		buffer.add("\t\t\t<div id=\"Image\">\n");
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		recipe.getImage().compress(Bitmap.CompressFormat.PNG, 100, baos);
+		recipe.getImage().compress(Bitmap.CompressFormat.JPEG, 100, baos);
 		byte[] imageByte = baos.toByteArray();
-		buffer.add("\t\t\t\t<img src=\"data:image/png;base64,"+Base64.encodeToString(imageByte, Base64.DEFAULT)+"\" />\n");
+		buffer.add("\t\t\t\t<img src=\"data:image/jpg;base64,"+Base64.encodeToString(imageByte, Base64.DEFAULT)+"\" />\n");
 		buffer.add("\t\t\t</div>\n");
 		//Ingredients
 		buffer.add("\t\t\t<div id=\"Ingredients\">\n");

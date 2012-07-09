@@ -61,8 +61,11 @@ public class RecipeViewActivity extends Activity {
     	TextView description = (TextView)findViewById(R.id.viewDescription);
     	TextView viewpeople = (TextView)findViewById(R.id.viewPeopleText);
     	Bitmap thumbnail = recipe.getImage();
-    	ImageView image = (ImageView) findViewById(R.id.viewPhoto);  
-    	image.setImageBitmap(thumbnail); 
+    	if (thumbnail!=null)
+    	{
+    		ImageView image = (ImageView) findViewById(R.id.viewPhoto);  
+    		image.setImageBitmap(thumbnail);
+    	}
     	name.setText(recipe.getName());
     	viewpeople.setText(recipe.getPeople().toString());
     	String formattedDescription= new String("");

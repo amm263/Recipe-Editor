@@ -10,8 +10,6 @@ public class Recipe{
 	private static Recipe instance = null;
 	private String[] description;
 	private ArrayList<Ingredient> ingredients;
-	private Integer hoursToPrepare= 0;
-	private Integer minutesToPrepare= 0;
 	private String name="";
 	private Integer people=2;
 	private Bitmap image = null;
@@ -98,25 +96,6 @@ public class Recipe{
 		return description;
 	}
 	
-	public void setHours(Integer hours)
-	{
-		hoursToPrepare= hours;
-	}
-	
-	public Integer getHours()
-	{
-		return hoursToPrepare;
-	}
-	
-	public void setMinutes(Integer minutes)
-	{
-		minutesToPrepare= minutes;
-	}
-	
-	public Integer getMinutes()
-	{
-		return minutesToPrepare;
-	}
 	
 	public Boolean saveRecipe() throws IOException
 	{

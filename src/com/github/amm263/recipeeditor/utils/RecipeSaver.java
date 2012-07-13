@@ -66,21 +66,17 @@ public class RecipeSaver {
 		buffer.add("\t\t<!-- CSS -->\n");
 		buffer.add("\t\t<style>\n");
 		//body
-		buffer.add("\t\t\tbody{\n\t\t\t\tmargin: 0px;\n\t\t\t\tpadding: 0px;\n\t\t\t\tfont-family: verdana, arial, helvetica, sans-serif;\n\t\t\t\tfont-size: 12px;\n\t\t\t\tline-height: 22px;\n\t\t\t\tcolor: #000000;\n\t\t\t\tbackground-color: #ffffff;\n\t\t\t}\n\n");
+		buffer.add("\t\t\tbody{\n\t\t\t\tmargin: 0px;\n\t\t\t\tpadding: 10px;\n\t\t\t\tfont-family: verdana, arial, helvetica, sans-serif;\n\t\t\t\tfont-size: 12px;\n\t\t\t\tline-height: 22px;\n\t\t\t\tcolor: #000000;\n\t\t\t\tbackground-color: #ffffff;\n\t\t\t}\n\n");
 		//H1 - p
 		buffer.add("\t\t\th1{\n\t\t\t\tmargin: 0px;\n\t\t\t\tpadding: 5px;\n\t\t\t\tfont-size: 32px;\n\t\t\t}\n\n\t\t\tp{\n\t\t\t\tmargin: 0px;\n\t\t\t\tpadding: 5px;\n\t\t\t}\n\n");
 		// a:link - a:visited
 		buffer.add("\t\t\ta:link{\n\t\t\t\tcolor: black;\n\t\t\t}\n\n");
 		//Container
 		buffer.add("\t\t\t#Container{\n\t\t\t\tposition: absolute;\n\t\t\t\tmargin: 0px;\n\t\t\t}\n\n");
-		//Image
-		buffer.add("\t\t\t\n\n");
 		//Header
-		buffer.add("\t\t\t\n\n");
-		//Ingredients
-		buffer.add("\t\t\t\n\n");
-		//Recipe
-		buffer.add("\t\t\t\n\n");		
+		buffer.add("\t\t\t#Header{\n\t\t\t\tpadding-bottom: 10px;\n\t\t\t}\n\n");
+		//Image
+		buffer.add("\t\t\t#Image{\n\t\t\t\tpadding: 5px;\n\t\t\t}\n\n");	
 		buffer.add("\t\t</style>\n");
 	}
 	
@@ -95,10 +91,14 @@ public class RecipeSaver {
 		buffer.add("\t\t<div id=\"Container\">\n");
 		//Image
 		buffer.add("\t\t\t<div id=\"Image\">\n");
-		ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		recipe.getImage().compress(Bitmap.CompressFormat.JPEG, 100, baos);
-		byte[] imageByte = baos.toByteArray();
-		buffer.add("\t\t\t\t<img src=\"data:image/jpg;base64,"+Base64.encodeToString(imageByte, Base64.DEFAULT)+"\" />\n");
+		if (recipe.getImage()!=null)
+		{
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			recipe.getImage().compress(Bitmap.CompressFormat.JPEG, 100, baos);
+			byte[] imageByte = baos.toByteArray();
+			buffer.add("\t\t\t\t<img src=\"data:image/jpg;base64,"+Base64.encodeToString(imageByte, Base64.DEFAULT));
+			buffer.add("\t\t\t\t\" />\n");
+		}
 		buffer.add("\t\t\t</div>\n");
 		//Ingredients
 		buffer.add("\t\t\t<div id=\"Ingredients\">\n");

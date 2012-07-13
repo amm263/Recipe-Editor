@@ -65,14 +65,16 @@ public final class R {
         public static final int new_ingredient_popup=0x7f030005;
     }
     public static final class menu {
-        public static final int activity_recipe_browser=0x7f070000;
-        public static final int activity_recipe_editor=0x7f070001;
-        public static final int activity_recipe_view=0x7f070002;
+        public static final int activity_auth=0x7f070000;
+        public static final int activity_recipe_browser=0x7f070001;
+        public static final int activity_recipe_editor=0x7f070002;
+        public static final int activity_recipe_view=0x7f070003;
     }
     public static final class string {
         public static final int app_name=0x7f050000;
         public static final int browseRecipeButton=0x7f050002;
         public static final int decrease=0x7f050015;
+        public static final int dropboxlogin=0x7f05001b;
         public static final int edit=0x7f050013;
         public static final int editorDescription=0x7f050007;
         public static final int editorImage=0x7f050004;
@@ -89,11 +91,14 @@ public final class R {
         public static final int ingredients=0x7f050014;
         public static final int menu_settings=0x7f05000e;
         public static final int newRecipeButton=0x7f050001;
+        public static final int password=0x7f05001a;
         public static final int save=0x7f05000c;
+        public static final int title_activity_auth=0x7f050018;
         public static final int title_activity_main=0x7f050010;
         public static final int title_activity_recipe_browser=0x7f050017;
         public static final int title_activity_recipe_editor=0x7f05000f;
         public static final int title_activity_recipe_view=0x7f050012;
+        public static final int username=0x7f050019;
     }
     public static final class style {
         public static final int AppTheme=0x7f060000;

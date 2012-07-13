@@ -24,5 +24,9 @@
     <string name="decrease">-</string>
     <string name="increase">+</string>
     <string name="title_activity_recipe_browser">Recipe Browser</string>
+    <string name="title_activity_auth">AuthActivity</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="dropboxlogin">Dropbox Log In</string>
 
 </resources>

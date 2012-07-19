@@ -14,7 +14,8 @@
 		    android:layout_height="wrap_content"
 		    android:text=""
 		    android:gravity="center"
-		    android:textAppearance="?android:attr/textAppearanceLarge" />
+		    android:textAppearance="?android:attr/textAppearanceLarge"
+		    android:padding="10dp" />
 		
 		<LinearLayout
 	    	android:id="@+id/viewPeopleLayout"
@@ -45,20 +46,23 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_gravity="center"
-	        android:contentDescription="@string/editorImage" />
+	        android:contentDescription="@string/editorImage"
+	        android:padding="10dp" />
 		
 		<TextView
 		    android:id="@+id/viewIngredients"
 		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:text="@string/ingredients"
-		    android:textAppearance="?android:attr/textAppearanceMedium" />
+		    android:textAppearance="?android:attr/textAppearanceMedium"
+		    android:padding="10dp" />
 		
 		<LinearLayout
 		  	android:id="@+id/viewIngredientsLayout"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
-	        android:orientation="vertical" >
+	        android:orientation="vertical"
+	        android:gravity="center" >
 		</LinearLayout>
 		
 		<TextView
@@ -66,14 +70,16 @@
 		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:text="@string/editorDescription"
-		    android:textAppearance="?android:attr/textAppearanceMedium" />
+		    android:textAppearance="?android:attr/textAppearanceMedium"
+		    android:padding="10dp" />
 		
 		<TextView
 		    android:id="@+id/viewDescription"
 		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:text=""
-		    android:textAppearance="?android:attr/textAppearanceSmall" />
+		    android:textAppearance="?android:attr/textAppearanceSmall"
+		    android:padding="10dp" />
 		
 		<Button
 	        android:id="@+id/viewEditButton"

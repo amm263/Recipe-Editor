@@ -88,7 +88,7 @@ public class RecipeLoader {
 					{
 						int counter= 0;
 						String[] ingredientValues= buffer.get(j).split(" ");
-						String ingredientName= ingredientValues[counter].replaceAll("<li>", "");
+						String ingredientName= ingredientValues[counter].replaceAll("<li>", "").replaceAll("\t\t\t\t\t", "");
 						counter++;
 						while(!ingredientValues[counter].equals(":"))
 						{
